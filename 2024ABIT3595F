@@ -1,0 +1,28 @@
+<?php
+
+// Calculate age from birthdate
+function calculateAge($dob) {
+    // Convert birthdate string to DateTime object
+    $dob = new DateTime($dob); 
+    // Get current date
+    $today = new DateTime('today'); 
+    // Calculate age difference
+    $interval = $today->diff($dob); 
+    // Return age in years
+    return $interval->y; 
+}
+
+// User data
+$name = "Arinda Ritah";
+$dob = "1990-03-03"; 
+$address = "Muhanga, Rukiga District";
+
+// Calculate user's age
+$age = calculateAge($dob);
+
+// Display welcome message
+echo "$name, Welcome home!\n";
+echo "You are from $address\n";
+echo "You are $age years old.\n";
+
+?>
